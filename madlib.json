@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "Madserver": "https://github.com/open-sorcerers/madserver/archive/master.zip"
+  }
+}

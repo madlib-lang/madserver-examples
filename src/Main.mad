@@ -1,0 +1,12 @@
+import IO from "IO"
+import { fromMaybe } from "Maybe"
+import { get, listen, send, queryParamByName } from "Madserver"
+
+
+get("/", (req, res) => pipe(
+  queryParamByName("name"),
+  fromMaybe("Unknown"),
+  (name) => send(`Hello ${name}!`, res)
+)(req))
+
+listen(3000, (_) => IO.log("Server running on port 3000..."))
